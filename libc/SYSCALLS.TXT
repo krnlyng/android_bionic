@@ -215,6 +215,9 @@ int           __timer_getoverrun:timer_getoverrun(timer_t)                      
 int           __timer_delete:timer_delete(timer_t)                                                      261,263,261
 int           utimes(const char*, const struct timeval tvp[2])                          269,271,267
 int           utimensat(int, const char *, const struct timespec times[2], int)         348,320,316
+int           timerfd_create(clockid_t, int)   350,322,321
+int           timerfd_settime(int, int, const struct itimerspec *, struct itimerspec *)   353,325,323
+int           timerfd_gettime(int, struct itimerspec *)   354,326,322
 
 # signals
 int     sigaction(int, const struct sigaction *, struct sigaction *)  67
