@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
+#include <stdint.h>
 #include <sys/cdefs.h>
+
+extern void *malloc(size_t s);
 
 static __thread void *tls_hooks[16];
 
@@ -22,3 +25,9 @@ void *__get_tls_hooks()
 {
     return tls_hooks;
 }
+
+void *glibc_malloc(size_t s)
+{
+    return malloc(s);
+}
+
